@@ -20,7 +20,7 @@ with app.app_context():
     if not Article.query.first(): # データが1件もなければ
         test_article = Article(
             title="初めての記事",
-            content="これはテスト記事の内容です。正しく表示されていますか？",
+            content="テスト記事です。祝!Renderへの初デプロイ!",
             author="管理者"
         )
         db.session.add(test_article)
