@@ -56,5 +56,8 @@ def get_article_detail(article_id):
         'date': article.created_at.strftime('%Y/%m/%d')
     })
 
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    # Renderなどの環境で指定されるポート番号を取得、なければ5000番を使う
+    port = int(os.environ.get("PORT", 5000))
+    # 外部（0.0.0.0）からのアクセスを許可して起動
+    app.run(host="0.0.0.0", port=port)
